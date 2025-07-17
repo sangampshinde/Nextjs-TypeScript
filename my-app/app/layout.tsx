@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import "./globals.css";
 
 export default function RootLayout({
@@ -8,8 +9,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-      >
-        {children}
+      ><Suspense fallback={<p>Loading.....</p>}>
+          {children}
+      </Suspense>
       </body>
     </html>
   );
